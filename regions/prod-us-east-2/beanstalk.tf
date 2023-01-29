@@ -1,12 +1,12 @@
 #Python Flask App Application
  resource "aws_elastic_beanstalk_application" "python_flask_app" {
-  name        = "Python-FLask-${var.region}App"
+  name        = "Python-FLask-App"
   description = "Python Flask App Application"
  }
 
 #Python Flask App Beanstalk
  resource "aws_elastic_beanstalk_environment" "python_flask_app" {
-    name = "Python-FLask-${var.region}-API"
+    name = "Python-FLask-API"
     application = aws_elastic_beanstalk_application.python_flask_app.name
     solution_stack_name = "64bit Amazon Linux 2 v3.5.3 running Docker"
     tier = "WebServer"
