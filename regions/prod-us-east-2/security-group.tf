@@ -57,7 +57,7 @@ resource "aws_security_group" "python_flask_app_beanstalk_alb" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["94.107.192./32"]
+    cidr_blocks = ["94.107.192.58/32"]
   }
 
   ingress {
