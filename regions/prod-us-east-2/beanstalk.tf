@@ -153,7 +153,7 @@
    setting{
        namespace = "aws:elasticbeanstalk:application:environment"
        name      = "DATABASE_URL"
-       value     = "postgres://postgres:admin@localhost:5432/postgres"
+       value     = "postgres://${var.postgres_db_username}:${random_password.db_pass.result}@${aws_db_instance.postgresdb.endpoint}:5432/postgres"
    }
    depends_on = [
      aws_iam_role.elasticbeanstalk_role,
