@@ -10,10 +10,8 @@ resource "aws_db_subnet_group" "main" {
 }
 
  resource "random_password" "db_pass" {
-   length            = 40
-   special           = true
-   min_special       = 5
-   override_special  = "!#$%^&*()-_=+[]{}<>:?"
+   length            = 20
+   special           = false
  }
 
 resource "aws_db_instance" "postgresdb" {
